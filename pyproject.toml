@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 dynamic = ["readme"]
 name = "megadav"
-version = "0.0.3"
+version = "0.0.4"
 requires-python = ">= 3.9"
 description = "Legacy Survey Data Retriever"
 keywords = ["mega", "dav", "filesystem"]

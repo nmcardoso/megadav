@@ -35,8 +35,8 @@ def install_handler(args):
 [Desktop Entry]
 Type=Application
 Exec="megadav start"
-Hidden=false
-NoDisplay=false
+Hidden=true
+NoDisplay=true
 X-GNOME-Autostart-enabled=true
 Name=MegaDAV startup
   """.strip()
