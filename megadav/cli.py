@@ -40,7 +40,8 @@ NoDisplay=false
 X-GNOME-Autostart-enabled=true
 Name=MegaDAV startup
   """.strip()
-  dest = Path.home() / '.config' / 'autostart'
+  dest = Path.home() / '.config' / 'autostart' / 'megadav.desktop'
+  dest.parent.mkdir(parents=True, exist_ok=True)
   dest.write_text(entry)
   run(['chmod', 'a+x', str(dest.absolute())])
 
