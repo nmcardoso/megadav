@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+  "setuptools >= 61.0",
+  "toml"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["readme"]
+name = "megadav"
+version = "0.0.1"
+requires-python = ">= 3.9"
+description = "Legacy Survey Data Retriever"
+keywords = ["mega", "dav", "filesystem"]
+authors = [
+  {name = "Natanael Magalhães Cardoso", email = "contact@natanael.net"}
+]
+maintainers = [
+  {name = "Natanael Magalhães Cardoso", email = "contact@natanael.net"}
+]
+dependencies = [
+  "wheel"
+]
+
+[project.optional-dependencies]
+docs = [
+]
+
+[project.scripts]
+pylegs = "megadav.cli:entrypoint"
+
+[project.urls]
+Homepage = "https://nmcardoso.github.io/megadav"
+Documentation = "https://nmcardoso.github.io/megadav"
+Repository = "https://github.com/nmcardoso/megadav"
+Issues = "https://github.com/nmcardoso/megadav/issues"
+Changelog = "https://github.com/nmcardoso/megadav/blob/main/CHANGELOG.md"
