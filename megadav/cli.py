@@ -1,5 +1,6 @@
 import os
 from argparse import ArgumentParser
+from pathlib import Path
 from subprocess import run
 
 
@@ -25,7 +26,23 @@ def logout_handler(args):
 def credentials_handler(args):
   print('MEGA_USER:', os.environ.get('MEGA_USER', 'not found'))
   print('MEGA_PASS:', os.environ.get('MEGA_PASS', 'not found'))
-
+  
+  
+  
+  
+def install_handler(args):
+  entry = """
+[Desktop Entry]
+Type=Application
+Exec="megadav start"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=MegaDAV startup
+  """.strip()
+  dest = Path.home() / '.config' / 'autostart'
+  dest.write_text(entry)
+  run(['chmod', 'a+x', str(dest.absolute())])
 
 
 def entrypoint():
@@ -39,6 +56,8 @@ def entrypoint():
   
   credentials = subparser.add_parser('credentials', description='Mega account credentials')
   
+  install = subparser.add_parser('install', description='Install MegaDAV daemon')
+  
   args = parser.parse_args()
   
   cmd_handlers = {
@@ -46,6 +65,7 @@ def entrypoint():
     'url': url_handler,
     'logout': logout_handler,
     'credentials': credentials_handler,
+    'install': install_handler,
   }
   
   handler = cmd_handlers.get(args.subprog)
