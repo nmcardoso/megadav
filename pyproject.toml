@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 dynamic = ["readme"]
 name = "megadav"
-version = "0.0.1"
+version = "0.0.2"
 requires-python = ">= 3.9"
 description = "Legacy Survey Data Retriever"
 keywords = ["mega", "dav", "filesystem"]
@@ -27,7 +27,7 @@ docs = [
 ]
 
 [project.scripts]
-pylegs = "megadav.cli:entrypoint"
+megadav = "megadav.cli:entrypoint"
 
 [project.urls]
 Homepage = "https://nmcardoso.github.io/megadav"
